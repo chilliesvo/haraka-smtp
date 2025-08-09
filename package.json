@@ -1,0 +1,16 @@
+{
+  "name": "integration-haraka",
+  "description": "An SMTP Server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "haraka -c .",
+    "dev": "DEBUG=haraka* haraka -o -c ."
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "ip-cidr": "^4.0.2"
+  },
+  "repository": "",
+  "license": "MIT",
+  "main": "index.js"
+}

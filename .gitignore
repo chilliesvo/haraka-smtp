@@ -1,0 +1,11 @@
+node_modules
+yarn.lock
+.env
+.vscode
+.DS_Store
+# Haraka internal files
+internalcmd_key
+dhparams.pem
+*.log
+tmp/
+config/logging.ini

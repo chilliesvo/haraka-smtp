@@ -7,4 +7,7 @@ yarn.lock
 internalcmd_key
 dhparams.pem
 *.log
-config/*ini
+# security
+smtp_forward.ini
+auth_flat_file.ini
+tls.ini

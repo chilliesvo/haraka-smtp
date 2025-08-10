@@ -1,0 +1,25 @@
+; When domain_selector is set to rcpt_to (the default), 
+; more specific routes are only honored for SMTP connections with a single recipient or SMTP connections where every recipient host is identical.
+; When domain_selector is set to mail_from, the domain of the MAIL FROM address is used.
+domain_selector=mail_from
+
+# default SMTP host
+host=smtp.sendgrid.net
+port=587
+auth_type=login
+auth_user=apikey
+auth_pass=your_key
+enable_outbound=true
+check_recipient=false
+enable_tls=true
+
+[peacom.co]
+host=email-smtp.ap-southeast-1.amazonaws.com
+port=587
+auth_type=login
+auth_user=apikey
+auth_pass=your_key
+enable_outbound=true
+check_recipient=false
+enable_tls=true
+

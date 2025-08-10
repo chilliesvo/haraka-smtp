@@ -7,5 +7,4 @@ yarn.lock
 internalcmd_key
 dhparams.pem
 *.log
-tmp/
-config/logging.ini
+config/*ini

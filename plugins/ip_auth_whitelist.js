@@ -1,7 +1,7 @@
 const ALLOWED_IPS = require("./ip_whitelist");
 const ipaddr = require("ipaddr.js");
 
-const isCheckWhitelist = true;
+const isCheckWhitelist = false;
 
 exports.hook_connect = function (next, connection) {
   const remote_ip = connection.remote.ip;

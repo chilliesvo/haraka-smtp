@@ -38,7 +38,7 @@ tls
 # ----------
 ip_auth_whitelist
 auth/flat_file
-auth_require
+# auth_require
 # auth/auth_proxy
 
 # MAIL FROM
@@ -50,6 +50,8 @@ mail_from.is_resolvable
 # ----------
 # Only accept mail for your personal list of hosts
 rcpt_to.in_host_list
+# Accepting any rcpt_to address
+@mailprotector/haraka-plugin-rcpt-to-accept-all
 # qmail-deliverable
 # rcpt_to.routes
 
@@ -70,4 +72,3 @@ rcpt_to.in_host_list
 # queues: discard  qmail-queue  quarantine  smtp_forward  smtp_proxy
 # Queue mail via smtp - see config/smtp_forward.ini for where your mail goes
 queue/smtp_forward
-# queue/smtp_forward_by_sender

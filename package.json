@@ -9,6 +9,7 @@
   "dependencies": {
     "@mailprotector/haraka-plugin-rcpt-to-accept-all": "^1.0.3",
     "dotenv": "^17.2.1",
+    "express": "^5.1.0",
     "ip-cidr": "^4.0.2"
   },
   "repository": "",

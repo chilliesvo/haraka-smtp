@@ -12,7 +12,7 @@
 # status
 # process_title
 # syslog
-# watch
+watch
 
 # CONNECT
 # ----------

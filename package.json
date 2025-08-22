@@ -2,17 +2,37 @@
   "name": "integration-haraka",
   "description": "An SMTP Server",
   "version": "0.0.1",
+  "type": "commonjs",
   "scripts": {
-    "start": "haraka -c .",
+    "start": "env-cmd nodemon --trace-warnings --exec babel-node app/server.js",
+    "haraka": "haraka -c .",
     "dev": "DEBUG=haraka* haraka -o -c ."
   },
   "dependencies": {
     "@mailprotector/haraka-plugin-rcpt-to-accept-all": "^1.0.3",
+    "@peacom/core": "^2.0.102",
+    "@peacom/model": "^2.0.276",
+    "body-parser": "^2.2.0",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "ip-cidr": "^4.0.2"
+    "http": "^0.0.1-security",
+    "ip-cidr": "^4.0.2",
+    "nodemailer": "^7.0.5",
+    "sequelize": "^6.37.7",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "repository": "",
   "license": "MIT",
-  "main": "index.js"
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.3",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/register": "^7.28.3",
+    "babel-eslint": "^10.1.0",
+    "env-cmd": "^10.1.0",
+    "nodemon": "^3.1.10"
+  }
 }

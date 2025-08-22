@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 10
+    },
+    "auditLog": "logs/amadeus/.4978a3a901a8a7d43b8e1146e9a16312c9f9defc-audit.json",
+    "files": [
+        {
+            "date": 1755832380886,
+            "name": "logs/amadeus/exception-2025-08-22.log",
+            "hash": "bcdccb6ad81b87441890b69bc7dd45948c52b90eaf099b8b9afbe0ea8399242d"
+        }
+    ],
+    "hashType": "sha256"
+}

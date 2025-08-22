@@ -13,8 +13,8 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/", (_req, res) => res.send({ message: "Welcome to the default API route" }));
-app.post("/", (_req, res) => res.send({ message: "Welcome to the default API route" }));
+app.get("/", (_req, res) => res.send({ message: "Welcome to the default Haraka API route" }));
+app.post("/", (_req, res) => res.send({ message: "Welcome to the default Haraka API route" }));
 
 /**
  *  Solve 304 status

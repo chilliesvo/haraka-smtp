@@ -41,9 +41,9 @@ function createLoggerOptions(loggerName, opts = {}) {
         maxSize: AppConf.logFile.maxSize,
         maxFiles: AppConf.logFile.maxFiles,
         level: "info",
-        ...opts,
-      }),
-    ],
+        ...opts
+      })
+    ]
   };
 
   if (opts.isSeparateError) {
@@ -56,21 +56,13 @@ function createLoggerOptions(loggerName, opts = {}) {
         maxSize: AppConf.logFile.maxSize,
         maxFiles: AppConf.logFile.maxFiles,
         level: "error",
-        ...opts,
+        ...opts
       })
     );
   }
 
   if (process.env.NODE_ENV === "development") {
-    rs.transports.push(
-      new winston.transports.Console({
-        level: "debug",
-        handleExceptions: true,
-        json: false,
-        colorize: true,
-        format: myFormat,
-      })
-    );
+    rs.transports.push(new winston.transports.Console({ level: "debug", handleExceptions: true, json: false, colorize: true, format: myFormat }));
   }
 
   return rs;
@@ -90,23 +82,21 @@ container.add("app", {
       handleExceptions: AppConf.logFile.handleExceptions,
       maxSize: AppConf.logFile.maxSize,
       maxFiles: AppConf.logFile.maxFiles,
-      level: "info",
-    }),
-  ],
+      level: "info"
+    })
+  ]
 });
 
 container.add("scheduler", createLoggerOptions("scheduler"));
-container.add("amadeus-log", createLoggerOptions("amadeus-api", { isSeparateError: true }));
-container.add("bulk", createLoggerOptions("bulk"));
+container.add("haraka", createLoggerOptions("haraka", { isSeparateError: true }));
 export const httpLog = container.get("http");
 export const appLog = container.get("app");
 
 export const dbLog = container.get("database");
 export const schedulerLog = container.get("scheduler");
-export const amadeusLog = container.get("amadeus-log");
-export const bulkLog = container.get("bulk");
+export const harakaLog = container.get("haraka");
 export const httpStream = {
   write: (message) => {
     httpLog.info(message);
-  },
+  }
 };

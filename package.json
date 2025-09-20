@@ -6,7 +6,8 @@
   "scripts": {
     "start": "env-cmd nodemon --trace-warnings --exec babel-node app/server.js",
     "haraka": "haraka -c .",
-    "dev": "DEBUG=haraka* haraka -o -c ."
+    "dev": "DEBUG=haraka* haraka -o -c .",
+    "test": "mocha --recursive --timeout 100000 --exit"
   },
   "dependencies": {
     "@mailprotector/haraka-plugin-rcpt-to-accept-all": "^1.0.3",
@@ -32,7 +33,26 @@
     "@babel/preset-env": "^7.28.3",
     "@babel/register": "^7.28.3",
     "babel-eslint": "^10.1.0",
+    "chai": "^6.0.1",
+    "chai-http": "^5.1.2",
     "env-cmd": "^10.1.0",
-    "nodemon": "^3.1.10"
+    "mocha": "^11.7.2",
+    "nodemon": "^3.1.10",
+    "nyc": "^17.1.0",
+    "prettier": "^3.6.2",
+    "shelljs": "^0.10.0"
+  },
+  "nyc": {
+    "_comment": "Purpose of this part: to do code coverage within Mocha/Chai using Istanbul",
+    "register": "babel-register",
+    "include": [
+      "app/**/*.js"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/tests/**",
+      "**/coverage/**"
+    ],
+    "all": true
   }
 }

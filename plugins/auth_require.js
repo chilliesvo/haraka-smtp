@@ -1,11 +1,17 @@
 exports.register = function () {
-  this.config = this.config.get("auth_require.ini", "ini");
+  this.load_config();
+};
+
+exports.load_config = function () {
+  this.auth_require_cfg = this.config.get("auth_require.ini", "ini", () => {
+    this.load_config();
+  });
 };
 
 exports.hook_capabilities = function (next, connection) {
   const port = connection.local.port;
-  const allowNoTlsGeneral = this.config.general?.allow_no_tls === "true";
-  const allowNoTlsPort = this.config.ports?.[port] === "true";
+  const allowNoTlsGeneral = this.auth_require_cfg.general?.allow_no_tls === "true";
+  const allowNoTlsPort = this.auth_require_cfg.ports?.[port] === "true";
 
   if (connection.tls.enabled || allowNoTlsGeneral || allowNoTlsPort) {
     connection.capabilities.push("AUTH PLAIN LOGIN");

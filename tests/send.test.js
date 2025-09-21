@@ -22,7 +22,7 @@ describe("send.test.js", () => {
     console.log(shell.exec(script));
   });
 
-  it("send by swalk 2525", async () => {
+  it.only("send by swalk 2525", async () => {
     const subject = "support send mail SWAKS Haraka 2525";
     const host = "localhost";
     const port = 2525;

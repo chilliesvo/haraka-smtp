@@ -8,5 +8,15 @@
   "semi": true,
   "bracketSpacing": true,
   "singleQuote": false,
-  "objectWrap": "collapse"
+  "overrides": [
+    {
+      "files": [
+        "*.json",
+        "*.jsonc"
+      ],
+      "options": {
+        "parser": "jsonc"
+      }
+    }
+  ]
 }

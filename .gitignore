@@ -11,4 +11,5 @@ dhparams.pem
 smtp_forward.ini
 auth_flat_file.ini
 tls.ini
+mysql.ini
 logs

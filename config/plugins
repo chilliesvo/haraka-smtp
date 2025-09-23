@@ -36,8 +36,10 @@ tls
 # AUTH plugins require TLS before AUTH is advertised, see
 #     https://github.com/haraka/Haraka/wiki/Require-SSL-TLS
 # ----------
+db/mysql
 ip_auth_whitelist
 auth/flat_file
+message_logging
 # auth_require
 # auth/auth_proxy
 

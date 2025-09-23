@@ -18,6 +18,7 @@
     "express": "^5.1.0",
     "http": "^0.0.1-security",
     "ip-cidr": "^4.0.2",
+    "mysql2": "^3.15.0",
     "nodemailer": "^7.0.5",
     "sequelize": "^6.37.7",
     "winston": "^3.17.0",
@@ -45,14 +46,8 @@
   "nyc": {
     "_comment": "Purpose of this part: to do code coverage within Mocha/Chai using Istanbul",
     "register": "babel-register",
-    "include": [
-      "app/**/*.js"
-    ],
-    "exclude": [
-      "**/node_modules/**",
-      "**/tests/**",
-      "**/coverage/**"
-    ],
+    "include": ["app/**/*.js", "plugins/**/*.js"],
+    "exclude": ["**/node_modules/**", "**/tests/**", "**/coverage/**"],
     "all": true
   }
 }

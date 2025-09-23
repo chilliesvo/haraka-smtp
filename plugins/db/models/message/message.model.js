@@ -14,8 +14,9 @@ class Message extends Model {
         from: { type: DataTypes.STRING(100) },
         to: { type: DataTypes.STRING(100) },
         port: { type: DataTypes.INTEGER },
-        clientIp: { type: DataTypes.TEXT },
+        clientIP: { type: DataTypes.TEXT },
         username: { type: DataTypes.STRING(100) },
+        tls: { type: DataTypes.TINYINT },
         status: { type: DataTypes.TINYINT },
         createdDate: { type: DataTypes.DATE },
         extraData: { type: DataTypes.TEXT }
